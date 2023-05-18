@@ -1,0 +1,27 @@
+[
+    {
+      "picture": "../src/assets/Banner/car2.jpg",
+      "id": "tc001",
+      "name": "speedster 5000",
+      "price": 29.99,
+      "rating": 4.5,
+      "subcategory": "sports car"
+    },
+    {
+      "picture": "../src/assets/Banner/car1.jpg",
+      "id": "tc002",
+      "name": "blaze rescuer",
+      "price": 19.99,
+      "rating": 4.2,
+      "subcategory": "mini fire truck"
+    },
+    {
+      "picture": "../src/assets/Banner/car3.jpg",
+      "id": "tc003",
+      "name": "patrol pursuit",
+      "price": 24.99,
+      "rating": 4.7,
+      "subcategory": "mini police car"
+    }
+  ]
+  
