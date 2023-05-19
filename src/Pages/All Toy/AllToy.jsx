@@ -15,12 +15,30 @@ const AllToy = () => {
                 <h3 className="text-2xl font-bold text-orange-600">All Toys:{allToys.length}</h3>
             </div>
             <div>
-                {
-                    allToys.map(allToy => <AllToyTable
-                        key={allToy._id}
-                        allToy={allToy}
-                    ></AllToyTable>)
-                }
+                <div className="container mx-auto overflow-x-auto w-full">
+                    <table className="table table-zebra w-full">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Toy Name</th>
+                                <th>Seller Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                allToys.map(allToy => <AllToyTable
+                                    key={allToy._id}
+                                    allToy={allToy}
+                                ></AllToyTable>)
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

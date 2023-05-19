@@ -7,12 +7,12 @@ import MyToyTable from "./MyToyTable";
 const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [toysInfo, setToysInfo] = useState([]);
-    const url =`http://localhost:5000/toys?email=${user?.email}`;
-    useEffect(()=>{
+    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    useEffect(() => {
         fetch(url)
-        .then(res =>res.json())
-        .then(data => setToysInfo(data))
-    },[url]);
+            .then(res => res.json())
+            .then(data => setToysInfo(data))
+    }, [url]);
 
     const handleDelete = id => {
         Swal.fire({
@@ -25,7 +25,7 @@ const MyToy = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                 
+
                 fetch(`http://localhost:5000/toys/${id}`, {
                     method: 'DELETE'
                 })
@@ -37,7 +37,7 @@ const MyToy = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                              );
+                            );
                             const remaining = toysInfo.filter(toyInfo => toyInfo._id !== id);
                             setToysInfo(remaining);
                         }
@@ -47,14 +47,35 @@ const MyToy = () => {
     }
     return (
         <div>
-            <h3 className="text-center text-3xl font-bold">Your Toys: {toysInfo.length}</h3>
-            {
-                toysInfo.map(toyInfo => <MyToyTable
-                    key={toyInfo._id}
-                    toyInfo={toyInfo}
-                    handleDelete={handleDelete}
-                ></MyToyTable>)
-            }
+            <div className="container mx-auto overflow-x-auto w-full">
+                <h3 className="text-center text-3xl font-bold">Your Toys: {toysInfo.length}</h3>
+                <table className="table table-zebra w-full">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Toy Name</th>
+                            <th>Seller Name</th>
+                            <th>Email</th>
+                            <th>Rating</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Details</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            toysInfo.map(toyInfo => <MyToyTable
+                                key={toyInfo._id}
+                                toyInfo={toyInfo}
+                                handleDelete={handleDelete}
+                            ></MyToyTable>)
+                        }
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
