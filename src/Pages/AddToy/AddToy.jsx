@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
@@ -37,7 +38,7 @@ const AddToy = () => {
         .then(res => res.json())
         .then(data => {
             if(data.insertedId){
-                alert('Service Book Successfully');
+                Swal.fire( 'Toy Added Successfully','','success');
             }
         })
     }
@@ -51,7 +52,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Seller Name</span>
                         </label>
-                        <input type="text" name="name" placeholder="Seller Name" readOnly defaultValue={user?.displayName} className="input input-bordered" />
+                        <input type="text" name="name" placeholder="Seller Name" defaultValue={user?.displayName} className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
