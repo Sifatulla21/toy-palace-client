@@ -15,7 +15,7 @@ const AllToy = () => {
                 <h3 className="text-2xl font-bold text-orange-600">All Toys:{allToys.length}</h3>
             </div>
             <div>
-                <div className="container mx-auto overflow-x-auto w-full">
+                <div className="container mx-auto overflow-x-auto w-full my-4">
                     <table className="table table-zebra w-full">
                         <thead>
                             <tr>
