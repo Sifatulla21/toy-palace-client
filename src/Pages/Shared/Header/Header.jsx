@@ -12,8 +12,8 @@ const Header = () => {
     const navItems = <>
         <li><Link to="/">Home </Link></li>
         <li><Link to="/login">About</Link></li>
+        <li><Link to="/alltoy">All Toy</Link></li>
         {user?.email? <>
-            <li><Link to="/alltoy">All Toy</Link></li>
             <li><Link to="/addtoy">Add A Toy</Link></li>
             <li><Link to="/mytoy">My Toy</Link></li>
             <li> <button onClick={handleLogOut}>Log Out</button> </li>

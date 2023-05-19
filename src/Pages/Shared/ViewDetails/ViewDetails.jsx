@@ -6,7 +6,6 @@ const ViewDetails = () => {
     return (
         <div>
         <div className="container mx-auto overflow-x-auto w-full">
-            <h3 className="text-center text-3xl font-bold">Your Toys: {toyDetails.toy}</h3>
             <table className="table table-zebra w-full">
                 <thead>
                     <tr>
@@ -18,7 +17,6 @@ const ViewDetails = () => {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Details</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,14 +47,6 @@ const ViewDetails = () => {
             <td>
                 {details}
             </td>
-            <th>
-                <div className="flex flex-col">
-                    <button className="btn btn-success btn-xs mb-2 font-bold">Update</button>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-error font-bold">
-                        Remove
-                    </button>
-                </div>
-            </th>
         </tr>
 
                 </tbody>

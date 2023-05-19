@@ -8,6 +8,14 @@
       "subcategory": "sports car"
     },
     {
+      "picture": "../src/assets/Banner/car4.jpg",
+      "id": "tc004",
+      "name": "speedster 5004",
+      "price": 29,
+      "rating": 4,
+      "subcategory": "sports car"
+    },
+    {
       "picture": "../src/assets/Banner/car1.jpg",
       "id": "tc002",
       "name": "blaze rescuer",
