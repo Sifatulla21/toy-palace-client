@@ -3,6 +3,8 @@ import Main from "../Layouts/Main/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import SignUp from "../Pages/Login/SignUp/SignUp";
+import AddToy from "../Pages/Shared/AddToy/AddToy";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
             path: "signup",
             element:<SignUp></SignUp>
           },
+          {
+            path: "addtoy",
+            element:<PrivateRoute><AddToy></AddToy></PrivateRoute>
+          }
 
       ]
     },

@@ -13,7 +13,7 @@ const Header = () => {
         <li><Link to="/">Home </Link></li>
         <li><Link to="/login">About</Link></li>
         {user?.email? <>
-            <li><Link to="/bookings">My Bookings</Link></li>
+            <li><Link to="/addtoy">Add A Toy</Link></li>
             <li> <button onClick={handleLogOut}>Log Out</button> </li>
             <li><img  className="w-24 rounded-full" src={user?.photoURL} alt="" /></li>
         </> : <li><Link to="/login">Login</Link></li>
