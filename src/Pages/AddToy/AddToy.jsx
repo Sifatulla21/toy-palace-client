@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../../Provider/AuthProvider';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
@@ -27,6 +27,19 @@ const AddToy = () => {
             details
         }
         console.log(toys);
+        fetch('http://localhost:5000/toys', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(toys)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                alert('Service Book Successfully');
+            }
+        })
     }
     return (
         <div className="container mx-auto mb-8">
