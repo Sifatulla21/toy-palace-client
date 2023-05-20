@@ -3,8 +3,14 @@ import car2 from '../../../assets/Banner/car2.jpg';
 import car3 from '../../../assets/Banner/car3.jpg';
 import car4 from '../../../assets/Banner/car4.jpg';
 import Marquee from "react-fast-marquee";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
     const photos = [
         `${car1}`,
         `${car2}`,
@@ -13,6 +19,7 @@ const Gallery = () => {
       ];
     
       return (
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
         <Marquee speed={150} gradient="true" direction="right" pauseOnHover="true"> 
         <div className="flex flex-wrap justify-center">
           {photos.map((photo, index) => (
@@ -31,6 +38,8 @@ const Gallery = () => {
           ))}
         </div>
         </Marquee>
+
+        </div>
       );
 };
 

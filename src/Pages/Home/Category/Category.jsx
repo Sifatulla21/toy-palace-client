@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import CategoryTab from './CategoryTab';
 
+
 const Category = () => {
     const { user } = useContext(AuthContext);
     const [toysInfo, setToysInfo] = useState([]);
     const [categoryInfo, setCategoryInfo] = useState("Sports Car");
-
     useEffect(() => {
         fetch(`http://localhost:5000/alltoy?category=${categoryInfo}`)
             .then(res => res.json())
@@ -35,7 +35,7 @@ const Category = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-8">
 
                 {
-                    toysInfo.map(toys => <CategoryTab
+                    toysInfo.map(toys => <CategoryTab  
                         key={toys._id}
                         toys={toys}
 

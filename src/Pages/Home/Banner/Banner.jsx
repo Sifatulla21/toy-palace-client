@@ -2,10 +2,16 @@ import car1 from '../../../assets/Banner/car1.jpg';
 import car2 from '../../../assets/Banner/car2.jpg';
 import car3 from '../../../assets/Banner/car3.jpg';
 import car4 from '../../../assets/Banner/car4.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
     return (
-        <div className="hero container mx-auto bg-base-200 my-4">
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="hero container mx-auto bg-base-200 my-4">
   <div className="hero-content flex-col lg:flex-row">
     <img src={car3} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
