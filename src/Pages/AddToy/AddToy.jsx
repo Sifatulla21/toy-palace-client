@@ -109,7 +109,7 @@ const AddToy = () => {
                     <textarea placeholder="Details" name="details" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Book Service" />
+                    <input className="btn btn-primary btn-block" type="submit" value="Submit" />
                 </div>
             </form>
         </div>
