@@ -26,7 +26,7 @@ const AddToy = () => {
             quantity,
             category,
             details
-        }
+        } || {}
         console.log(toys);
         fetch('http://localhost:5000/toys', {
             method: 'POST',
@@ -44,8 +44,9 @@ const AddToy = () => {
     }
     return (
         <div className="container mx-auto mb-8">
-            <h2 className="text-center text-3xl">Add A Toy</h2>
-            <form onSubmit={handleBookService}>
+            
+            <form className="border-double border-4 border-indigo-600 p-4 shadow-lg hover:shadow-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110" onSubmit={handleBookService}>
+            <h2 className="text-center text-3xl text-primary mb-4">Add A Toy</h2>
                 <div className="grid grid-cols-1 md: grid-cols-2 lg: grid-cols-2 gap-6">
 
                     <div className="form-control">

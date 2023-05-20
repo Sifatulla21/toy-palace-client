@@ -15,8 +15,8 @@ const CategoryTab = ({ toys }) => {
         console.log(use);
     }
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={photo} alt="" /></figure>
+        <div className="card w-96 bg-base-100 shadow-xl hover:shadow-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <figure><img className="h-full" src={photo} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{toy}</h2>
                 <p className="font-bold">Price: ${price}</p>

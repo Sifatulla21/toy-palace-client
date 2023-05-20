@@ -47,8 +47,8 @@ const MyToy = () => {
     return (
         <div>
             <div className="container mx-auto overflow-x-auto w-full">
-                <h3 className="text-center text-3xl font-bold">Your Toys: {toysInfo.length}</h3>
-                <table className="table table-zebra w-full">
+                <h3 className="text-center text-3xl font-bold text-primary">My Toys: {toysInfo.length}</h3>
+                <table className="table table-zebra w-full mt-4">
                     <thead>
                         <tr>
                             <th>Image</th>
@@ -60,7 +60,7 @@ const MyToy = () => {
                             <th>Category</th>
                             <th>Quantity</th>
                             <th>Details</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,6 +1,7 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
 import img from '../../../assets/Banner/car1.jpg';
 import app from '../../../Firebase/firebase.config';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -47,7 +48,7 @@ const Login = () => {
                 <div className="w-1/2 mr-12">
                     <img src={img} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100  shadow-lg hover:shadow-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                     <div className="card-body">
                         <h1 className="text-3xl font-bold text-center">Login now!</h1>
                         <form onSubmit={handleLogin}>
@@ -71,11 +72,11 @@ const Login = () => {
                             </div>
                         </form>
                         <h3 className="text-red-500 font-bold">{error}</h3>
-                        <p>New to Car Doctors? <Link className="text-orange-600 font-bold" to="/signup">Sign Up</Link></p>
+                        <p>New to Car Doctors? <Link className="text-primary font-bold" to="/signup">Sign Up</Link></p>
                         <div className="divider">OR Sign In With</div>
                         <div>
-                        <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
-                                G
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary btn-block">
+                                <FaGoogle className="mr-2"></FaGoogle>Google
                             </button>
                         </div>
                     </div>

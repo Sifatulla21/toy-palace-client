@@ -19,7 +19,7 @@ const Category = () => {
     return (
         <div className="container mx-auto my-24">
             <h1 className="text-center text-3xl font-bold">Choose Car By Category</h1>
-            <div className=" flex w-1/2 mx-auto my-24">
+            <div className=" flex justify-center my-24">
                 <div>
                     <button className="btn btn-primary mr-4" onClick={() => handleCategory('Sports Car')}>Sports Car</button>
                 </div>

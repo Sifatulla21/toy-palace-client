@@ -1,9 +1,10 @@
 import React from 'react';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const MyToyTable = ({ toyInfo, handleDelete }) => {
     const { _id, sellerName, email, toy, photo, price, rating, quantity, category, details } = toyInfo;
     return (
-        <tr>
+        <tr className=" shadow-lg hover:shadow-xl transition duration-1000 ease-in transform hover:-translate-y-1 hover:scale-1">
             <td>
                 <div className="w-24 h-24">
                     {photo && <img src={photo} />}
@@ -34,10 +35,10 @@ const MyToyTable = ({ toyInfo, handleDelete }) => {
                 {details}
             </td>
             <th>
-                <div className="flex flex-col">
-                    <button className="btn btn-success btn-xs mb-2 font-bold">Update</button>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-error font-bold">
-                        Remove
+                <div className="flex">
+                    <button className=" mr-4 text-3xl"><FaEdit className="text-purple-700"></FaEdit></button>
+                    <button onClick={() => handleDelete(_id)} className="ml-2 text-3xl">
+                        <FaTrash className="text-red-700"></FaTrash>
                     </button>
                 </div>
             </th>
