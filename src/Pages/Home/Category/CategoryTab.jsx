@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import Rating from 'react-rating';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert2';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -18,7 +20,14 @@ const CategoryTab = ({ toys }) => {
             <div className="card-body">
                 <h2 className="card-title">{toy}</h2>
                 <p className="font-bold">Price: ${price}</p>
-                <p className="font-bold">{rating}</p>
+                <Rating
+                        className="text-red-500 text-3xl"
+                        placeholderRating={rating}
+                        readonly
+                        emptySymbol={<FaRegHeart></FaRegHeart>}
+                        placeholderSymbol={<FaHeart></FaHeart>}
+                        fullSymbol={<FaHeart></FaHeart>}
+                    />
                 <div className="card-actions justify-end">
                     <Link to={`/toy/${_id}`}><button onClick={handleShowMessage} className="btn btn-primary mb-2 font-bold">View Details</button></Link>
                 </div>
