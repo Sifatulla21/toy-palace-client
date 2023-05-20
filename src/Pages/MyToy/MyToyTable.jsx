@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyToyTable = ({ toyInfo, handleDelete }) => {
     const { _id, sellerName, email, toy, photo, price, rating, quantity, category, details } = toyInfo;
@@ -36,7 +37,7 @@ const MyToyTable = ({ toyInfo, handleDelete }) => {
             </td>
             <th>
                 <div className="flex">
-                    <button className=" mr-4 text-3xl"><FaEdit className="text-purple-700"></FaEdit></button>
+                    <Link to={`${_id}`}> <button className=" mr-4 text-3xl"><FaEdit className="text-purple-700"></FaEdit></button></Link>
                     <button onClick={() => handleDelete(_id)} className="ml-2 text-3xl">
                         <FaTrash className="text-red-700"></FaTrash>
                     </button>
