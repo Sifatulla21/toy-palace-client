@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 import { AuthContext } from '../../../Provider/AuthProvider';
 const Header = () => {
-    const {user,logOut} = useContext(AuthContext);
+
+    const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-        .then( () => {})
-        .catch(error => console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
     const navItems = <>
         <li><Link to="/">Home </Link></li>
         <li><Link to="/login">About</Link></li>
         <li><Link to="/alltoy">All Toy</Link></li>
-        {user?.email? <>
+        {user?.email ? <>
             <li><Link to="/addtoy">Add A Toy</Link></li>
             <li><Link to="/mytoy">My Toy</Link></li>
             <li> <button onClick={handleLogOut}>Log Out</button> </li>
-            <li><img  className="w-24 rounded-full" src={user?.photoURL} alt="" /></li>
+            <li className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+            <img className="w-24 rounded-full" src={user?.photoURL} alt="" /></li>
         </> : <li><Link to="/login">Login</Link></li>
         }
     </>
@@ -40,9 +42,6 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
-            </div>
-            <div className="navbar-end">
-            <button className="btn btn-outline btn-error">Appoinment</button>
             </div>
         </div>
     );
