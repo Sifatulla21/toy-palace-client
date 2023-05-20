@@ -28,7 +28,7 @@ const AddToy = () => {
             details
         } || {}
         console.log(toys);
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toy-place-server-rose.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

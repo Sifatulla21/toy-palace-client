@@ -8,7 +8,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [toysInfo, setToysInfo] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
+        fetch(`https://toy-place-server-rose.vercel.app/mytoys?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
     }, []);
@@ -25,7 +25,7 @@ const MyToy = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://toy-place-server-rose.vercel.app/toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

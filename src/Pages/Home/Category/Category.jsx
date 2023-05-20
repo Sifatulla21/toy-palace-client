@@ -8,7 +8,7 @@ const Category = () => {
     const [toysInfo, setToysInfo] = useState([]);
     const [categoryInfo, setCategoryInfo] = useState("Sports Car");
     useEffect(() => {
-        fetch(`http://localhost:5000/alltoy?category=${categoryInfo}`)
+        fetch(`https://toy-place-server-rose.vercel.app/alltoy?category=${categoryInfo}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
     }, [categoryInfo]);
