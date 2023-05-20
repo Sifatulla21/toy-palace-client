@@ -1,5 +1,5 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../../assets/Banner/car1.jpg';
 import app from '../../../Firebase/firebase.config';
@@ -7,6 +7,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+    const [error, setError] = useState('');
     const googleProvider = new GoogleAuthProvider(); 
     const auth = getAuth(app);
     const location = useLocation();
@@ -23,7 +24,11 @@ const Login = () => {
             console.log(user);
             navigate(from, {replace: true });
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            const splitedMessage = error.message.split('/');
+            const splitedError = splitedMessage[1].split(')');
+            setError(splitedError[0].toUpperCase());
+        })
     }
     const handleGoogleSignIn = () => {
         signInWithPopup(auth,googleProvider)
@@ -65,6 +70,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <h3 className="text-red-500 font-bold">{error}</h3>
                         <p>New to Car Doctors? <Link className="text-orange-600 font-bold" to="/signup">Sign Up</Link></p>
                         <div className="divider">OR Sign In With</div>
                         <div>

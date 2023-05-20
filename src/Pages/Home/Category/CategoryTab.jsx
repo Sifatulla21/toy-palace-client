@@ -6,7 +6,12 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 const CategoryTab = ({ toys }) => {
     const { user } = useContext(AuthContext);
     const { _id, toy, photo, price, rating} = toys;
-
+    const handleShowMessage =()=>{
+        if(user===null){
+            swal.fire( 'You have to log in first to view details','','warning');
+        }
+        console.log(use);
+    }
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={photo} alt="" /></figure>

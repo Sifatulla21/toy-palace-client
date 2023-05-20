@@ -7,12 +7,11 @@ import MyToyTable from "./MyToyTable";
 const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [toysInfo, setToysInfo] = useState([]);
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
     useEffect(() => {
-        fetch(url)
+        fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
-    }, [url]);
+    }, []);
 
     const handleDelete = id => {
         Swal.fire({
