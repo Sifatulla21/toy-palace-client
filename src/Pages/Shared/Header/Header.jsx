@@ -40,10 +40,11 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral  rounded-box w-52">
                         {navItems1}
+                        {navItems2}
                     </ul>
                 </div>
-                <Link to="/"><img className="h-18 w-48" src={logo} alt="" /></Link>
                 <h1 className="text-3xl">Toy Palace</h1>
+                <Link to="/"><img className="h-18 w-48" src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -51,7 +52,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-24">
-                <ul>
+                <ul className="menu menu-horizontal px-1">
                     {navItems2}
                 </ul>
             </div>

@@ -28,7 +28,7 @@ const Footer = () => {
             <footer className="footer px-10 py-4 border-t bg-neutral text-neutral-content">
                 <div className="items-center grid-flow-col">
                     <img className="h-24 w-24" src={logo} alt="" />
-                    <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
+                    <p>Toy Palace. <br />Providing reliable toys since 1992</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">

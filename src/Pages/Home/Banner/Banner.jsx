@@ -10,18 +10,21 @@ const Banner = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-    return (
-        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="hero container mx-auto bg-base-200 my-4">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src={car3} className="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div>
-    );
-};
+      return (
+        <div className="relative container mx-auto my-12">
+        <img src={car2} alt="Banner" className="w-full h-[500px]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#151515] to-[rgba(21, 21, 21, 0)] opacity-90" />
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Welcome to our Toy Shop!</h1>
+            <p className="text-lg md:text-xl lg:text-2xl text-white">Discover the joy of childhood.</p>
+            <button className="mt-6 py-2 px-6 bg-yellow-400 text-white text-lg font-medium rounded-full shadow-md hover:bg-yellow-500 transition-colors duration-300 ease-in-out">
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+      );
+    };
 
 export default Banner;
