@@ -32,7 +32,7 @@ const Category = () => {
                 </div>
             </div>
             <h1 className="text-3xl text-blue-500 font-bold text-center my-4">{categoryInfo}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-0">
 
                 {
                     toysInfo.map(toys => <CategoryTab  

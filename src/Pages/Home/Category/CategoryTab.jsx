@@ -42,7 +42,7 @@ const CategoryTab = ({ toys }) => {
                         fullSymbol={<FaHeart></FaHeart>}
                     />
           </div>
-          <Link to={`/toy/${_id}`}><button className="bg-transparent hover:bg-blue-500 text-blue-500 hover:text-white py-2 px-4 rounded-full">
+          <Link to={`/toy/${_id}`}><button onClick={handleShowMessage} className="bg-transparent hover:bg-blue-500 text-blue-500 hover:text-white py-2 px-4 rounded-full">
           <FaArrowRight></FaArrowRight>
           </button></Link>
         </div>
