@@ -14,10 +14,13 @@ const PhotoGallery = () => {
             .then(res => res.json())
             .then(data => setAllToys(data))
     }, []);
-    useEffect(() => {
+    useEffect(() => { 
         AOS.init();
       }, []);
   return (
+    <div className="my-24">
+      <h1 className="text-3xl text-blue-500 font-bold text-center my-12">Photo Gallery</h1>
+
     <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" className="container mx-auto photo-gallery">
       {allToys.map(toy => (
         <div className="photo-item" key={toy._id}>
@@ -25,6 +28,7 @@ const PhotoGallery = () => {
           <div className="caption">{toy.toy}</div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

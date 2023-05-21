@@ -22,7 +22,7 @@ const CategoryTab = ({ toys }) => {
         console.log(use);
     }
     return (
-        <div className="card-container bg-red-100 rounded-lg  overflow-hidden max-w-md mx-auto my-2 shadow-2xl bg-base-100   hover:shadow-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500"  className="card-container bg-red-100 rounded-lg  overflow-hidden max-w-md mx-auto my-2 shadow-2xl bg-base-100   hover:shadow-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110">
       <img src={photo} alt="Product Image" className="card-image" />
       <div className="card-content p-4">
         <div className="flex items-center justify-between my-4">
