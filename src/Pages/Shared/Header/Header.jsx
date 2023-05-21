@@ -25,7 +25,7 @@ const Header = () => {
             <div className="flex">
                 <li> <button className="mr-4 mt-4" onClick={handleLogOut}>Log Out</button> </li>
                 <li className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                    <img className="w-12 rounded-full" src={user?.photoURL} alt="" /></li>
+                    <img className="w-24 rounded-full" src={user?.photoURL} alt="" /></li>
             </div>
         </> : <li><Link to="/login">Login</Link></li>
         }
