@@ -5,9 +5,11 @@ import { FaGoogle } from 'react-icons/fa';
 import img from '../../../assets/Banner/car1.jpg';
 import app from '../../../Firebase/firebase.config';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+    useTitle("Login");
     const [error, setError] = useState('');
     const googleProvider = new GoogleAuthProvider(); 
     const auth = getAuth(app);

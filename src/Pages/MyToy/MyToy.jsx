@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2';
 import MyToyTable from "./MyToyTable";
+import useTitle from "../../Hooks/useTitle";
 
 
 const MyToy = () => {
     const { user } = useContext(AuthContext);
+    useTitle("My Toy");
     const [toysInfo, setToysInfo] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
     useEffect(() => {
@@ -52,13 +54,13 @@ const MyToy = () => {
         <div>
             <div className="container mx-auto overflow-x-auto w-full">
                 <h3 className="text-center text-3xl font-bold text-primary">My Toys: {toysInfo.length}</h3>
-                <div >
-                {/* className="flex flex-row-reverse" */}
-                    Sort Toys:
+                <div className="flex flex-row-reverse">
+                    
                     <select value={sortOrder} onChange={handleSortChange}>
                         <option value="asc">Price(Low To High)</option>
                         <option value="desc">Price(High To Low)</option>
                     </select>
+                    Sort Toys:
                 </div>
                 <table className="table table-zebra w-full mt-4">
                     <thead>

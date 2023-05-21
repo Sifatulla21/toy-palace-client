@@ -4,10 +4,12 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../../assets/Banner/car1.jpg'
 import app from '../../../Firebase/firebase.config';
+import useTitle from '../../../Hooks/useTitle';
 import { AuthContext } from '../../../Provider/AuthProvider';
 const SignUp = () => {
     const {createUser, updateUser} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider(); 
+    useTitle("Sign Up")
     const auth = getAuth(app);
     const navigate = useNavigate();
     const location = useLocation();

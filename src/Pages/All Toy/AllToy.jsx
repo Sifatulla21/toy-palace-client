@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../Hooks/useTitle';
 import AllToyTable from './AllToyTable';
 
 const AllToy = () => {
     const [allToys, setAllToys] = useState([]);
     const [searchText, setSearchText] = useState([]);
+    useTitle("All Toy");
     const handleSearch = () => {
         fetch(`https://toy-place-server-rose.vercel.app/alltoystext/${searchText}`)
             .then((res) => res.json())
