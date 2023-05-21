@@ -7,11 +7,12 @@ import MyToyTable from "./MyToyTable";
 const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [toysInfo, setToysInfo] = useState([]);
+    const [sortOrder, setSortOrder] = useState('asc');
     useEffect(() => {
-        fetch(`https://toy-place-server-rose.vercel.app/mytoys?email=${user?.email}`)
+        fetch(`http://localhost:5000/mytoys?email=${user?.email}&sort=${sortOrder}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
-    }, []);
+    }, [sortOrder]);
 
     const handleDelete = id => {
         Swal.fire({
@@ -43,11 +44,22 @@ const MyToy = () => {
                     })
             }
         });
-    }
+    };
+    const handleSortChange = (e) => {
+        setSortOrder(e.target.value);
+    };
     return (
         <div>
             <div className="container mx-auto overflow-x-auto w-full">
                 <h3 className="text-center text-3xl font-bold text-primary">My Toys: {toysInfo.length}</h3>
+                <div >
+                {/* className="flex flex-row-reverse" */}
+                    Sort Toys:
+                    <select value={sortOrder} onChange={handleSortChange}>
+                        <option value="asc">Price(Low To High)</option>
+                        <option value="desc">Price(High To Low)</option>
+                    </select>
+                </div>
                 <table className="table table-zebra w-full mt-4">
                     <thead>
                         <tr>

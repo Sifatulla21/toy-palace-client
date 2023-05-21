@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
-import Gallery from '../Gallery/Gallery';
+import PhotoGallery from '../Gallery/PhotoGallery';
+
 
 const Home = () => {
     
     return (
         <div>
             <Banner></Banner>
-            <Gallery></Gallery>
+            <PhotoGallery></PhotoGallery>
             <Category></Category>
         </div>
     );
