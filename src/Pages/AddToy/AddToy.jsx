@@ -45,10 +45,10 @@ const AddToy = () => {
         })
     }
     return (
-        <div className="container mx-auto mb-8">
+        <div className="container mx-auto my-8 bg-[#E5E4E2]">
             
             <form className="border-double border-4 border-indigo-600 p-4 shadow-lg" onSubmit={handleAddToy}>
-            <h2 className="text-center text-3xl text-primary mb-4">Add A Toy</h2>
+            <h2 className="text-center text-3xl font-bold text-primary mb-4">Add A Toy</h2>
                 <div className="grid grid-cols-1 md: grid-cols-2 lg: grid-cols-2 gap-6">
 
                     <div className="form-control">
@@ -112,7 +112,7 @@ const AddToy = () => {
                     <textarea required placeholder="Details" name="details" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Submit" />
+                    <input className="btn btn-primary text-xl btn-block" type="submit" value="ADD" />
                 </div>
             </form>
         </div>

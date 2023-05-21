@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom'; 
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 
@@ -7,7 +7,7 @@ const UpdateToy = () => {
     const toyInfo = useLoaderData();
     useTitle("Update");
     const { _id, sellerName, email, toy, photo, price, rating, quantity, category, details } = toyInfo;
-    const handleUpdate = () => {
+    const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
         const price = form.price.value;
@@ -35,7 +35,7 @@ const UpdateToy = () => {
     }
     return (
 
-        <div className="container mx-auto mb-8">
+        <div className="container mx-auto my-8 bg-[#E5E4E2]">
 
             <form className="border-double border-4 border-indigo-600 p-4 shadow-lg" onSubmit={handleUpdate}>
                 <h3 className="text-center text-3xl font-bold my-4">Update:  <span className="text-primary">{toy}</span></h3>
@@ -101,7 +101,7 @@ const UpdateToy = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Submit" />
+                    <input className="btn btn-primary text-xl btn-block" type="submit" value="UPDATE" />
                 </div>
             </form>
         </div>

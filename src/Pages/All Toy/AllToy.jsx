@@ -21,11 +21,11 @@ const AllToy = () => {
     }, [])
     return (
         <div className="text-center">
-            <div className="mb-4">
+            <div className="my-4">
                 <h3 className="text-2xl font-bold text-primary">Total Number Of Toys: <span> {allToys.length}</span></h3>
             </div>
             <div>
-                <div className="form-control text-center">
+                <div className="form-control text-center my-4">
                     <div className="input-group flex justify-center ">
                         <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search By Name" className="input input-bordered" />
                         <button onClick={handleSearch} className="btn btn-square btn-primary">

@@ -15,7 +15,7 @@ const ViewDetails = () => {
               <img src={photo} alt={toy} className="w-full" />
             </div>
             <div className="w-1/2 px-24 pt-8 pb-12">
-              <h1 className="text-8xl font-bold mb-12">{toy}</h1>
+              <h1 className="text-4xl font-bold mb-12">{toy}</h1>
               <p className="text-xl text-gray-600">Seller: {sellerName}</p>
               <p className="text-sm text-gray-600 mb-12">Email: {email}</p>
               <p className="text-3xl font-bold text-blue-500 mt-2">Price: ${price}</p>

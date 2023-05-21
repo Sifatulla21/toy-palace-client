@@ -3,6 +3,7 @@ import Error from "../Layouts/Error/Error";
 import Main from "../Layouts/Main/Main";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToy from "../Pages/All Toy/AllToy";
+import Blog from "../Pages/Blog/Blog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
             loader: ({params}) => fetch(`https://toy-place-server-rose.vercel.app/alltoys/${params.id}`)
           },
+          {
+            path:'blog',
+            element:<Blog></Blog>
+          }
 
       ]
     },
