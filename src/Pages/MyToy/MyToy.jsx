@@ -11,7 +11,7 @@ const MyToy = () => {
     const [toysInfo, setToysInfo] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys?email=${user?.email}&sort=${sortOrder}`)
+        fetch(`https://toy-place-server-rose.vercel.app/mytoys?email=${user?.email}&sort=${sortOrder}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
     }, [sortOrder]);
@@ -57,8 +57,8 @@ const MyToy = () => {
                 <div className="flex flex-row-reverse">
                     
                     <select value={sortOrder} onChange={handleSortChange}>
-                        <option value="asc">Price(Low To High)</option>
-                        <option value="desc">Price(High To Low)</option>
+                        <option value="asc">Price(High To Low)</option>
+                        <option value="desc">Price(Low To High)</option>
                     </select>
                     Sort Toys:
                 </div>

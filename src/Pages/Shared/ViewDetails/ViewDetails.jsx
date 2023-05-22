@@ -31,7 +31,7 @@ const ViewDetails = () => {
               </div>
               <p className="text-3xl font-bold mt-2">Available Quantity: <span className="text-primary">{quantity}</span></p>
               <p className="mt-12 text-3xl font-bold">Description</p>
-              <p className=" w-1/2 text-gray-800 lg:text-2xl ">{details}</p>
+              <p className="py-2 whitespace-normal break-words w-1/2 text-gray-800 lg:text-2xl ">{details}</p>
             </div>
           </div>
         </div>

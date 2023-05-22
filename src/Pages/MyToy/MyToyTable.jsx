@@ -32,7 +32,7 @@ const MyToyTable = ({ toyInfo, handleDelete }) => {
             <td>
                 {quantity}
             </td>
-            <td>
+            <td className="py-2 whitespace-normal break-words">
                 {details}
             </td>
             <th>
